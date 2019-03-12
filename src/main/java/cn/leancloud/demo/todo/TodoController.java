@@ -7,9 +7,7 @@ import java.util.Map;
 
 import com.avos.avoscloud.*;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -43,6 +41,12 @@ public class TodoController {
     todo.setContent(content);
     todo.save();
     return new ModelAndView("redirect:/todos/");
+  }
+
+  @GetMapping("/hello")
+  @ResponseBody
+  public String hello(){
+    return "hello";
   }
 
 }
